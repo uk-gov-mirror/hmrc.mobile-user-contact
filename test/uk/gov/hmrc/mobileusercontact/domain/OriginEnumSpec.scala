@@ -36,11 +36,6 @@ class OriginEnumSpec extends BaseSpec {
     result shouldBe JsString("mobile-self-assessment-payment-status")
   }
 
-  "be writable to JSON for mobile-tax-credits" in {
-    val result = Json.toJson(OriginEnum.mobileTaxCredits)
-    result shouldBe JsString("mobile-tax-credits")
-  }
-
   "be writable to JSON for mobile-help-to-save" in {
     val result = Json.toJson(OriginEnum.mobileHelpToSave)
     result shouldBe JsString("mobile-help-to-save")
@@ -89,11 +84,6 @@ class OriginEnumSpec extends BaseSpec {
   "be readable from JSON for mobile-self-assessment-payment-status" in {
     val result = Json.fromJson(JsString("mobile-self-assessment-payment-status"))(OriginEnum.format)
     result.get shouldBe OriginEnum.mobileSelfAssessmentPaymentStatus
-  }
-
-  "be readable from JSON for mobile-tax-credits" in {
-    val result = Json.fromJson(JsString("mobile-tax-credits"))(OriginEnum.format)
-    result.get shouldBe OriginEnum.mobileTaxCredits
   }
 
   "be readable from JSON for mobile-help-to-save" in {
